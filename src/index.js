@@ -4,6 +4,7 @@ import App from './App';
 import './index.css';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
+import { BrowserRouter, Route } from 'react-router-dom';
 
 import reducers from './reducers';
 
@@ -19,7 +20,10 @@ class Goodbye extends React.Component {
 
 ReactDOM.render(
     <Provider store={createStoreWithMiddleware(reducers)}>
-        <App />
+        <BrowserRouter>
+            <Route path="/hello" component={Hello} />
+            <Route path="/goodbye" component={Goodbye} />
+        </BrowserRouter>
     </Provider>
   ,
   document.getElementById('root')
