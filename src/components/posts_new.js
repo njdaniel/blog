@@ -38,6 +38,7 @@ class PostsNew extends Component {
                 name="content"
                 component={this.renderField}
               />
+              <button type="submit" className="btn btn-primary">Submit</button>
           </form>
         );
     }
