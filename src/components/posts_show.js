@@ -12,17 +12,17 @@ class PostsShow extends Component {
     }
 
     render() {
-        posts[this.props.match.params.id]; // the post we want to show
+        // this.props === ownProps
         return (
             <div>
                 Posts Show!
             </div>
         );
-    };
+    }
 }
 
-function mapStateToProps({ posts }) {
-    return {posts};
+function mapStateToProps({ posts }, ownProps) {
+    return {post: posts[ownProps.match.parmas.id]};
 }
 
-export default connect(null, fetchPost)(PostsShow);
+export default connect(mapStateToProps, {fetchPost})(PostsShow);
